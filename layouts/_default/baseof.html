@@ -6,6 +6,9 @@
 {{- if or .Description .Site.Params.description }}
 <meta name="description" content="{{ .Description | default .Site.Params.description }}">
 {{- end }}
+{{- if .Site.Params.baiduSiteVerificationToken }}
+<meta name="baidu-site-verification" content="{{ .Site.Params.baiduSiteVerificationToken }}">
+{{- end }}
 <meta name="keywords" content="{{ if .Params.Keywords }}{{ delimit .Params.Keywords ", " }}{{ end }}">
 <meta name="robots" content="index,follow"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
